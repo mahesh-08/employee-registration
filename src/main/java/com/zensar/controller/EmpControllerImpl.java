@@ -53,7 +53,7 @@ public class EmpControllerImpl implements EmpController {
 			List<Employee> allEmployee = empService.getAllEmployee();
 			return new ResponseEntity("Get all Employee", allEmployee, new StatusDO(200, HttpStatus.OK.name()));
 		} catch (InvalidTokenException e) {
-			return new ResponseEntity("Add Employee", null, new StatusDO(-1, e.getMessage()));
+			return new ResponseEntity("Get all Employee", null, new StatusDO(-1, e.getMessage()));
 		}
 	}
 
