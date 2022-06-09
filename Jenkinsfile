@@ -1,14 +1,19 @@
 pipeline {
     agent any
     stages {
-        stage ('build app') {
+        stage ('build') {
             steps {               
-                    sh 'mvn clean install'                                    
+                    sh 'docker build -t cicd-employee .'                                    
             }
         }
-        stage ('build') {
+        stage ('mysql') {
             steps {
-                    sh 'docker-compose up'
+                    sh 'docker run --name=mysql-host --net=host -e MYSQL_ROOT_PASSWORD=root -v /storage/mysql-host/datadir:/var/lib/mysql -d mysql'
+            }
+        }
+        stage ('run') {
+            steps {
+                    sh 'docker run cicd-employee'
             }
         }
         
