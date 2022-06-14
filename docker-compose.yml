@@ -26,7 +26,7 @@ services:
     ports:
       - 8082:8082
     environment:
-      SPRING_DATASOURCE_URL: jdbc:mysql://mysqldb:3306/EmployeeDB
+      SPRING_DATASOURCE_URL: jdbc:mysql://mysql-cicd:3306/EmployeeDB
    # networks: 
     #  - mysql-db
       
