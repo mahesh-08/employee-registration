@@ -2,7 +2,7 @@
 #FROM openjdk:8-jre-alpine3.9
 FROM openjdk:16-alpine3.13
 # copy the packaged jar file into our docker image
-COPY /SpringBoot-Employee-registration-0.0.1-SNAPSHOT.jar /SpringBoot-Employee-registration.jar
+COPY target/SpringBoot-Employee-registration-0.0.1-SNAPSHOT.jar /SpringBoot-Employee-registration.jar
 #COPY .mvn/ .mvn
 #COPY mvnw pom.xml ./
 #COPY src ./src
