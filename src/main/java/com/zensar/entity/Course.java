@@ -15,7 +15,7 @@ import lombok.Data;
 public class Course {
 
 	@Id
-	@GeneratedValue(strategy= GenerationType.AUTO)
+	@GeneratedValue(strategy= GenerationType.IDENTITY)
 	private int courseid;
 	private String courseName;
 	private String trainerName;
